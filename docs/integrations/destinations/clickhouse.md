@@ -67,12 +67,12 @@ You will need to choose an existing database or create a new database that will 
 
 You should now have all the requirements needed to configure ClickHouse as a destination in the UI. You'll need the following information to configure the ClickHouse destination:
 
-- **Host**
-- **Port**
-- **Username**
-- **Password**
-- **Database**
-- **Jdbc_url_params**
+* **Host**
+* **Port**
+* **Username**
+* **Password**
+* **Database**
+* **Engine** (default `MergeTree`)
 
 ## Naming Conventions
 
@@ -96,6 +96,7 @@ Therefore, Airbyte ClickHouse destination will create tables and schemas using t
 | 1.0.0   | 2024-02-07 | [\#34637](https://github.com/airbytehq/airbyte/pull/34637) | Update the raw table schema                                                                   |
 | 0.2.5   | 2023-06-21 | [\#27555](https://github.com/airbytehq/airbyte/pull/27555) | Reduce image size                                                                             |
 | 0.2.4   | 2023-06-05 | [\#27036](https://github.com/airbytehq/airbyte/pull/27036) | Internal code change for future development (install normalization packages inside connector) |
+| 0.3.0   | 2023-05-09 | [\#25914](https://github.com/airbytehq/airbyte/pull/25914) | Add cluster and custom CA verification support                                                |
 | 0.2.3   | 2023-04-04 | [\#24604](https://github.com/airbytehq/airbyte/pull/24604) | Support for destination checkpointing                                                         |
 | 0.2.2   | 2023-02-21 | [\#21509](https://github.com/airbytehq/airbyte/pull/21509) | Compatibility update with security patch for strict encrypt version                           |
 | 0.2.1   | 2022-12-06 | [\#19573](https://github.com/airbytehq/airbyte/pull/19573) | Update dbt version to 1.3.1                                                                   |
@@ -110,5 +111,3 @@ Therefore, Airbyte ClickHouse destination will create tables and schemas using t
 | 0.1.3   | 2022-02-14 | [\#10256](https://github.com/airbytehq/airbyte/pull/10256) | Add `-XX:+ExitOnOutOfMemoryError` JVM option                                                  |
 | 0.1.1   | 2021-12-21 | [\#8982](https://github.com/airbytehq/airbyte/pull/8982)   | Set isSchemaRequired to false                                                                 |
 | 0.1.0   | 2021-11-04 | [\#7620](https://github.com/airbytehq/airbyte/pull/7620)   | Add ClickHouse destination                                                                    |
-
-</details>
