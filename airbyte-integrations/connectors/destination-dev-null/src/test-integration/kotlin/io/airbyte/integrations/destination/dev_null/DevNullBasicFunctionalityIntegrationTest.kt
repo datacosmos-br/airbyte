@@ -7,15 +7,27 @@ package io.airbyte.integrations.destination.dev_null
 import io.airbyte.cdk.load.test.util.NoopDestinationCleaner
 import io.airbyte.cdk.load.test.util.NoopExpectedRecordMapper
 import io.airbyte.cdk.load.write.BasicFunctionalityIntegrationTest
+import io.airbyte.cdk.load.write.Untyped
+import org.junit.jupiter.api.Disabled
 import org.junit.jupiter.api.Test
 
 class DevNullBasicFunctionalityIntegrationTest :
     BasicFunctionalityIntegrationTest(
-        DevNullTestUtils.loggingConfig,
+        DevNullTestUtils.loggingConfigContents,
+        DevNullSpecificationOss::class.java,
         DevNullDestinationDataDumper,
         NoopDestinationCleaner,
         NoopExpectedRecordMapper,
         verifyDataWriting = false,
+        isStreamSchemaRetroactive = false,
+        supportsDedup = false,
+        stringifySchemalessObjects = false,
+        promoteUnionToObject = false,
+        preserveUndeclaredFields = false,
+        commitDataIncrementally = false,
+        allTypesBehavior = Untyped,
+        envVars = emptyMap(),
+        supportFileTransfer = false,
     ) {
     @Test
     override fun testBasicWrite() {
@@ -26,4 +38,6 @@ class DevNullBasicFunctionalityIntegrationTest :
     override fun testMidSyncCheckpointingStreamState() {
         super.testMidSyncCheckpointingStreamState()
     }
+
+    @Test @Disabled("File transfer is not supported") override fun testBasicWriteFile() {}
 }
