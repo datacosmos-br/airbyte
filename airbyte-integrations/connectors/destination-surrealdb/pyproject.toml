@@ -28,7 +28,7 @@ surrealdb = {git = "https://github.com/mumoshu/surrealdb.py.git", rev = "849bd5d
 destination-surrealdb = "destination_surrealdb.run:run"
 
 [tool.poetry.group.dev.dependencies]
-pytest = "^8.3.2"
+pytest = ">=8.3.2,<10.0.0"
 
 [tool.poe]
 include = [

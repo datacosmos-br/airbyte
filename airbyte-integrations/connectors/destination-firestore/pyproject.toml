@@ -25,7 +25,7 @@ airbyte-cdk = "^6.0.0"
 destination-firestore = "destination_firestore.run:run"
 
 [tool.poetry.group.dev.dependencies]
-pytest = "^8.3.2"
+pytest = "^9.0.3"
 
 
 [tool.poe]
